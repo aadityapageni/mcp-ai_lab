@@ -110,6 +110,8 @@ Try from the `#bot-kube` Slack channel, for example:
 @BotKube kubectl describe pod <pod-name> -n <namespace>
 ```
 
+[Teams Integration Tutrorial](https://botkube.io/blog/maximize-your-devops-teams-efficiency-with-botkube-and-microsoft-teams)
+
 ---
 
 ## 3. Argo CD MCP Server
