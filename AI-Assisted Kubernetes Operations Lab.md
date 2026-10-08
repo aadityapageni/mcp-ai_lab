@@ -153,11 +153,11 @@ EOF
 1. Open VS Code **Settings**.
 2. Go to the **MCP Servers** section.
 
-![](Pasted image 20261008004844.png)
+!([Pasted image 20261008004844.png](https://raw.githubusercontent.com/aadityapageni/mcp-ai_lab/refs/heads/master/Pasted%20image%2020261008004844.png)
 
 3. Enable `argocd-mcp`.
 
-![](Pasted image 20261008004951.png)
+![](https://raw.githubusercontent.com/aadityapageni/mcp-ai_lab/refs/heads/master/Pasted%20image%2020261008004951.png)
 
 ### 3.3 Try It
 
