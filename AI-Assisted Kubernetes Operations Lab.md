@@ -8,12 +8,16 @@ This lab covers three AI / automation integrations for Kubernetes:
 Prerequisites:
 
 - Access to the lab AKS cluster
-- Valid `~/.kube/config`
 - `helm`, `kubectl`, and VS Code installed
 
 ---
 
 ## 1. K8sGPT
+
+
+
+- Valid `~/.kube/config` is required.
+- Login to the guaccamole console that you have been provided.
 
 ### 1.1 Install K8sGPT
 
@@ -36,10 +40,9 @@ Then set it as the default backend:
 
 ```bash
 k8sgpt auth default -p openai
+
 k8sgpt auth list
 ```
-
-> Get the API key and model name from `class.env`. Do not commit keys to Git.
 
 ### 1.3 Analyze the Cluster
 
@@ -58,7 +61,7 @@ k8sgpt filters list
 Filtered analysis with AI explanation:
 
 ```bash
-k8sgpt analyze --namespace $NAMESPACE --filter Pod --explain --anonymize
+k8sgpt analyze --namespace $NAMESPACE --explain --anonymize
 ```
 
 > The `--anonymize` flag masks sensitive cluster data before sending payloads to the external AI backend.
@@ -113,7 +116,13 @@ Try from the `#bot-kube` Slack channel, for example:
 
 The Argo CD MCP server exposes specific Argo CD operations to your AI assistant. For example, a `get_projects` tool runs `argocd get projects` behind the scenes on the remote server.
 
-### 3.1 Create VS Code MCP Config
+## 3.0 Install npm on WSL
+
+```
+sudo apt install nodejs npm
+```
+
+### 3.1 Create VS Code MCP Config where your project is located.
 
 ```bash
 mkdir -p .vscode
@@ -138,7 +147,7 @@ cat .vscode/mcp.json <<'EOF'
       "command": "npx",
       "args": ["-y", "argocd-mcp@0.9.0", "stdio"],
       "env": {
-        "ARGOCD_BASE_URL": "https://135.235.144.138",
+        "ARGOCD_BASE_URL": "https://argo-dev.startsml.com",
         "ARGOCD_API_TOKEN": "${input:argocd-token}",
         "NODE_TLS_REJECT_UNAUTHORIZED": "0"
       }
